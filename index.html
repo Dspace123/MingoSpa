@@ -4,30 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mingo Spa - Massage Dưỡng Sinh & Gội Đầu Hàn Quốc</title>
-  <meta name="description" content="Mingo Spa - Không gian dưỡng sinh, trị liệu cổ vai gáy, massage body đá nóng và gội đầu Hàn Quốc cao cấp tại Tân An, Long An.">
+  <meta name="description" content="Mingo Spa - Thư giãn là cách bạn nạp lại năng lượng để sống tốt hơn mỗi ngày. Massage dưỡng sinh và gội đầu Hàn Quốc tại Tân An, Long An.">
 
-  <!-- Google Fonts & Font Awesome -->
+  <!-- Google Fonts: Plus Jakarta Sans & Dancing Script cho nét chữ thư pháp -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     /* ========================================================
-       1. BẢNG MÀU THƯƠNG HIỆU MINGO SPA (BRAND GUIDELINE)
+       BẢNG MÀU & THIẾT LẬP CHUNG THEO THIẾT KẾ THAM CHIẾU
        ======================================================== */
     :root {
-      --xanh-ebony: #555D50;    /* 40% - Thanh lịch, thiên nhiên */
-      --kem-nga: #F7F3EB;       /* 40% - Tinh tế, nhẹ nhàng */
-      --hong-dam: #A64D68;      /* 15% - Điểm nhấn chim Hồng Hạc */
-      --be-am: #C7B49A;         /* 5%  - Sang trọng, ấm cúng */
-      --dark-green: #3B4237;
+      --bg-cream: #FAF6F0;
+      --bg-white: #FFFFFF;
+      --brand-pink: #C73866;
+      --brand-pink-dark: #A62951;
+      --brand-green-dark: #37463D;
       --text-main: #2D312E;
       --text-muted: #6B7268;
-      --white: #FFFFFF;
-      --shadow-soft: 0 10px 30px rgba(85, 93, 80, 0.08);
-      --shadow-hover: 0 15px 35px rgba(166, 77, 104, 0.15);
-      --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      --line-soft: #EAE3D5;
+      --radius-sm: 8px;
+      --radius-md: 18px;
+      --radius-pill: 50px;
+      --shadow-card: 0 10px 25px rgba(0, 0, 0, 0.05);
+      --transition: all 0.3s ease;
     }
 
     * {
@@ -42,15 +45,26 @@
 
     body {
       font-family: 'Plus Jakarta Sans', sans-serif;
-      background-color: var(--kem-nga);
+      background-color: var(--bg-cream);
       color: var(--text-main);
       line-height: 1.6;
       overflow-x: hidden;
     }
 
-    h1, h2, h3, h4, .serif-font {
-      font-family: 'Cormorant Garamond', serif;
+    .calligraphy {
+      font-family: 'Dancing Script', cursive;
       letter-spacing: 0.5px;
+    }
+
+    .container {
+      max-width: 1140px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
     img {
@@ -59,616 +73,572 @@
       display: block;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .btn {
+    /* Nút bấm Đặt lịch */
+    .btn-book {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 10px;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 600;
+      gap: 8px;
+      background: linear-gradient(135deg, var(--brand-pink) 0%, var(--brand-pink-dark) 100%);
+      color: #fff;
+      font-weight: 700;
       font-size: 0.95rem;
-      cursor: pointer;
-      transition: var(--transition);
+      padding: 12px 26px;
+      border-radius: var(--radius-pill);
       border: none;
-      text-transform: uppercase;
-      letter-spacing: 1px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(199, 56, 102, 0.28);
+      transition: var(--transition);
+      white-space: nowrap;
     }
 
-    .btn-primary {
-      background: linear-gradient(135deg, var(--hong-dam) 0%, #87364E 100%);
-      color: var(--white);
-      box-shadow: 0 6px 20px rgba(166, 77, 104, 0.3);
-    }
-
-    .btn-primary:hover {
+    .btn-book:hover {
       transform: translateY(-2px);
-      box-shadow: var(--shadow-hover);
-      background: linear-gradient(135deg, #b85372 0%, #993b57 100%);
-    }
-
-    .btn-outline {
-      border: 1.5px solid var(--xanh-ebony);
-      color: var(--xanh-ebony);
-      background: transparent;
-    }
-
-    .btn-outline:hover {
-      background: var(--xanh-ebony);
-      color: var(--white);
-    }
-
-    .section-title-wrap {
-      text-align: center;
-      max-width: 720px;
-      margin: 0 auto 50px;
-    }
-
-    .sub-badge {
-      display: inline-block;
-      color: var(--hong-dam);
-      font-weight: 700;
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      margin-bottom: 8px;
-    }
-
-    .main-heading {
-      font-size: 2.8rem;
-      color: var(--xanh-ebony);
-      font-weight: 700;
-      line-height: 1.2;
+      box-shadow: 0 10px 22px rgba(199, 56, 102, 0.38);
+      color: #fff;
     }
 
     /* ========================================================
-       2. TOP BAR & NAVIGATION
+       1. THANH ĐIỀU HƯỚNG (HEADER NAVBAR)
        ======================================================== */
-    .top-bar {
-      background: var(--xanh-ebony);
-      color: var(--kem-nga);
-      font-size: 0.85rem;
-      padding: 8px 0;
-    }
-
-    .top-bar-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .top-info {
-      display: flex;
-      gap: 20px;
-    }
-
-    .top-info span i {
-      color: var(--be-am);
-      margin-right: 6px;
-    }
-
-    .navbar {
-      background: rgba(247, 243, 235, 0.95);
-      backdrop-filter: blur(10px);
+    .header-nav {
+      background: rgba(250, 246, 240, 0.97);
+      backdrop-filter: blur(8px);
       position: sticky;
       top: 0;
       z-index: 1000;
-      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.04);
-      padding: 12px 0;
-      transition: var(--transition);
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(234, 227, 213, 0.6);
     }
 
-    .nav-container {
+    .nav-wrapper {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
 
-    .brand-logo {
+    .brand-group {
       display: flex;
       align-items: center;
       gap: 12px;
     }
 
-    .logo-icon {
-      width: 44px;
-      height: 44px;
-      fill: var(--hong-dam);
+    /* Hiển thị logo doanh nghiệp */
+    .brand-img-logo {
+      height: 48px;
+      width: auto;
+      object-fit: contain;
     }
 
-    .brand-text h1 {
-      font-size: 1.8rem;
-      color: var(--hong-dam);
-      line-height: 1;
-      font-weight: 700;
+    .brand-title {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--brand-pink);
+      letter-spacing: 1px;
     }
 
-    .brand-text p {
-      font-size: 0.7rem;
-      color: var(--xanh-ebony);
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      font-weight: 600;
-    }
-
-    .nav-links {
+    .nav-menu {
       display: flex;
       list-style: none;
-      gap: 32px;
+      gap: 24px;
     }
 
-    .nav-links a {
+    .nav-menu a {
+      font-size: 0.92rem;
       font-weight: 600;
-      color: var(--xanh-ebony);
-      font-size: 0.95rem;
-      position: relative;
+      color: var(--text-main);
+      display: flex;
+      align-items: center;
+      gap: 6px;
       transition: var(--transition);
     }
 
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--hong-dam);
-      transition: var(--transition);
+    .nav-menu a i {
+      font-size: 0.85rem;
+      color: var(--brand-pink);
     }
 
-    .nav-links a:hover {
-      color: var(--hong-dam);
+    .nav-menu a:hover {
+      color: var(--brand-pink);
     }
 
-    .nav-links a:hover::after {
-      width: 100%;
-    }
-
-    .mobile-toggle {
+    .mobile-btn {
       display: none;
       font-size: 1.6rem;
-      color: var(--xanh-ebony);
       background: none;
       border: none;
+      color: var(--text-main);
       cursor: pointer;
     }
 
     /* ========================================================
-       3. HERO SECTION
+       2. HERO SECTION
        ======================================================== */
-    .hero {
+    .hero-section {
+      padding: 50px 0 70px;
       position: relative;
-      padding: 80px 0 100px;
-      background: radial-gradient(circle at 85% 20%, rgba(199, 180, 154, 0.25) 0%, transparent 60%);
     }
 
     .hero-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
+      grid-template-columns: 1.15fr 0.85fr;
       align-items: center;
-      gap: 50px;
+      gap: 40px;
     }
 
-    .hero-content h2 {
-      font-size: 3.6rem;
-      line-height: 1.15;
-      color: var(--xanh-ebony);
-      margin-bottom: 20px;
+    .hero-quote {
+      font-size: 2.2rem;
+      color: #3B3835;
+      line-height: 1.35;
+      margin-bottom: 15px;
     }
 
-    .hero-content h2 span {
-      color: var(--hong-dam);
-      font-style: italic;
+    .hero-main-title {
+      font-size: 3.4rem;
+      font-weight: 900;
+      color: var(--brand-pink);
+      letter-spacing: 2px;
+      line-height: 1;
+      margin-bottom: 8px;
     }
 
-    .hero-desc {
-      font-size: 1.1rem;
-      color: var(--text-muted);
-      margin-bottom: 35px;
-      max-width: 520px;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 15px;
-      margin-bottom: 35px;
-    }
-
-    .badge-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(85, 93, 80, 0.08);
-      padding: 8px 16px;
-      border-radius: 30px;
-      font-size: 0.88rem;
+    .hero-sub-title {
+      font-size: 1.25rem;
       font-weight: 600;
-      color: var(--xanh-ebony);
+      color: #4A4E48;
+      margin-bottom: 30px;
     }
 
-    .badge-item i {
-      color: var(--hong-dam);
-    }
-
-    .hero-cta {
-      display: flex;
-      gap: 18px;
-    }
-
-    .hero-image-wrapper {
-      position: relative;
-    }
-
-    .hero-img-card {
-      border-radius: 24px;
-      overflow: hidden;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.12);
-      border: 8px solid var(--white);
-      position: relative;
-    }
-
-    .hero-float-card {
-      position: absolute;
-      bottom: -25px;
-      left: -25px;
-      background: var(--white);
-      padding: 18px 24px;
-      border-radius: 18px;
-      box-shadow: var(--shadow-soft);
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      border-left: 5px solid var(--hong-dam);
-    }
-
-    .hero-float-card i {
-      font-size: 2rem;
-      color: var(--hong-dam);
-    }
-
-    .hero-float-card h4 {
-      font-size: 1.2rem;
-      color: var(--xanh-ebony);
-    }
-
-    .hero-float-card p {
-      font-size: 0.82rem;
-      color: var(--text-muted);
-    }
-
-    /* ========================================================
-       4. BRAND STORY & PHILOSOPHY
-       ======================================================== */
-    .story-section {
-      padding: 90px 0;
-      background: var(--white);
-    }
-
-    .story-grid {
+    /* 4 Tiện ích tròn dưới tiêu đề */
+    .hero-features-bar {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .story-quote-box {
-      background: var(--kem-nga);
-      padding: 40px;
-      border-radius: 20px;
-      border-left: 6px solid var(--be-am);
-      position: relative;
-    }
-
-    .story-quote-box blockquote {
-      font-family: 'Cormorant Garamond', serif;
-      font-size: 1.55rem;
-      font-style: italic;
-      color: var(--xanh-ebony);
-      line-height: 1.45;
-      margin-bottom: 20px;
-    }
-
-    .story-author {
-      font-weight: 700;
-      color: var(--hong-dam);
-      font-size: 0.95rem;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-    }
-
-    .story-details p {
-      margin-bottom: 20px;
-      color: var(--text-muted);
-      font-size: 1.05rem;
-    }
-
-    .privilege-card {
-      background: var(--kem-nga);
-      border-radius: 16px;
-      padding: 24px;
-      margin-top: 25px;
-      border: 1px dashed var(--xanh-ebony);
-    }
-
-    .privilege-card h4 {
-      color: var(--xanh-ebony);
-      font-size: 1.3rem;
-      margin-bottom: 12px;
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .privilege-list {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      font-size: 0.9rem;
-    }
-
-    .privilege-list li i {
-      color: var(--hong-dam);
-      margin-right: 6px;
-    }
-
-    /* ========================================================
-       5. FEATURED COMBOS (MENU 1)
-       ======================================================== */
-    .combos-section {
-      padding: 100px 0;
-      background: var(--kem-nga);
-    }
-
-    .combos-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 30px;
-    }
-
-    .combo-card {
-      background: var(--white);
-      border-radius: 20px;
-      padding: 32px;
-      box-shadow: var(--shadow-soft);
-      transition: var(--transition);
-      display: flex;
-      flex-direction: column;
-      position: relative;
-      border: 1px solid rgba(199, 180, 154, 0.3);
-    }
-
-    .combo-card:hover {
-      transform: translateY(-8px);
-      box-shadow: var(--shadow-hover);
-      border-color: var(--hong-dam);
-    }
-
-    .combo-card.popular {
-      border: 2px solid var(--hong-dam);
-    }
-
-    .popular-tag {
-      position: absolute;
-      top: -12px;
-      right: 25px;
-      background: var(--hong-dam);
-      color: var(--white);
-      font-size: 0.75rem;
-      font-weight: 700;
-      padding: 4px 14px;
-      border-radius: 20px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .combo-header {
-      border-bottom: 1px solid rgba(85, 93, 80, 0.1);
-      padding-bottom: 18px;
-      margin-bottom: 20px;
-    }
-
-    .combo-header h3 {
-      font-size: 1.8rem;
-      color: var(--xanh-ebony);
-      margin-bottom: 6px;
-    }
-
-    .price-wrap {
-      display: flex;
-      align-items: baseline;
-      gap: 10px;
-    }
-
-    .current-price {
-      font-size: 2rem;
-      font-weight: 800;
-      color: var(--hong-dam);
-    }
-
-    .old-price {
-      font-size: 1.1rem;
-      color: #A0A59E;
-      text-decoration: line-through;
-    }
-
-    .combo-services {
-      list-style: none;
-      margin-bottom: 28px;
-      flex-grow: 1;
-    }
-
-    .combo-services li {
-      font-size: 0.95rem;
-      padding: 8px 0;
-      color: var(--text-main);
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .combo-services li i {
-      color: var(--hong-dam);
-      font-size: 0.85rem;
-    }
-
-    /* ========================================================
-       6. ALACARTE MENU (MENU 2 TABS)
-       ======================================================== */
-    .menu-tabs-section {
-      padding: 90px 0;
-      background: var(--white);
-    }
-
-    .tab-nav {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+      grid-template-columns: repeat(4, 1fr);
       gap: 12px;
-      margin-bottom: 45px;
+      padding: 16px;
+      background: var(--bg-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      margin-bottom: 30px;
+      border: 1px solid var(--line-soft);
     }
 
-    .tab-btn {
-      padding: 12px 24px;
-      background: var(--kem-nga);
-      border: 1px solid var(--be-am);
-      border-radius: 40px;
-      color: var(--xanh-ebony);
+    .feature-point {
+      text-align: center;
+      border-right: 1px solid var(--line-soft);
+      padding: 0 6px;
+    }
+
+    .feature-point:last-child {
+      border-right: none;
+    }
+
+    .feature-point i {
+      font-size: 1.4rem;
+      color: var(--brand-pink);
+      margin-bottom: 6px;
+      display: inline-block;
+    }
+
+    .feature-point p {
+      font-size: 0.82rem;
       font-weight: 600;
-      cursor: pointer;
-      transition: var(--transition);
-      font-size: 0.95rem;
+      color: var(--text-main);
+      line-height: 1.25;
     }
 
-    .tab-btn.active, .tab-btn:hover {
-      background: var(--xanh-ebony);
-      color: var(--white);
-      border-color: var(--xanh-ebony);
+    .hero-img-box {
+      position: relative;
     }
 
-    .menu-group {
-      display: none;
-      grid-template-columns: repeat(auto-fit, minmax(460px, 1fr));
-      gap: 25px;
-    }
-
-    .menu-group.active {
-      display: grid;
-    }
-
-    .menu-item-row {
-      background: var(--kem-nga);
-      padding: 20px 24px;
-      border-radius: 14px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      transition: var(--transition);
-    }
-
-    .menu-item-row:hover {
-      background: #EFEAE0;
-      transform: translateX(4px);
-    }
-
-    .item-name {
-      font-size: 1.1rem;
-      font-weight: 700;
-      color: var(--xanh-ebony);
-      margin-bottom: 4px;
-    }
-
-    .item-desc {
-      font-size: 0.85rem;
-      color: var(--text-muted);
-    }
-
-    .item-cost {
-      text-align: right;
-      min-width: 110px;
-    }
-
-    .item-cost .price {
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--hong-dam);
-    }
-
-    .item-cost .time {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      display: block;
+    .hero-main-img {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+      border: 6px solid #fff;
     }
 
     /* ========================================================
-       7. GALLERY & AMBIANCE
+       3. VÌ SAO NÊN CHỌN MINGO SPA?
        ======================================================== */
-    .gallery-section {
-      padding: 90px 0;
-      background: var(--kem-nga);
+    .why-section {
+      padding: 40px 0 60px;
+      text-align: center;
     }
 
-    .gallery-grid {
+    .section-header {
+      margin-bottom: 40px;
+    }
+
+    .title-with-lotus {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      font-size: 2.1rem;
+      font-weight: 800;
+      color: #303531;
+      margin-bottom: 8px;
+    }
+
+    .title-with-lotus i {
+      color: var(--brand-pink);
+      font-size: 1.7rem;
+    }
+
+    .section-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+    }
+
+    .why-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      grid-template-columns: repeat(4, 1fr);
       gap: 20px;
     }
 
-    .gallery-item {
-      position: relative;
-      border-radius: 16px;
-      overflow: hidden;
-      height: 320px;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .gallery-item:hover img {
-      transform: scale(1.08);
-    }
-
-    .gallery-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to top, rgba(59, 66, 55, 0.85) 0%, transparent 60%);
+    .why-card {
+      background: var(--bg-white);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: 24px 16px;
+      box-shadow: var(--shadow-card);
+      transition: var(--transition);
       display: flex;
       flex-direction: column;
-      justify-content: flex-end;
-      padding: 20px;
-      color: var(--white);
+      align-items: center;
+      gap: 10px;
     }
 
-    .gallery-overlay h4 {
-      font-size: 1.3rem;
-      color: var(--kem-nga);
+    .why-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--brand-pink);
+    }
+
+    .why-icon {
+      font-size: 2rem;
+      color: var(--brand-pink);
+    }
+
+    .why-card h4 {
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.35;
     }
 
     /* ========================================================
-       8. BOOKING MODAL & FLOATING ACTION BUTTONS
+       4. CÁC COMBO DỊCH VỤ NỔI BẬT
+       ======================================================== */
+    .combo-section {
+      padding: 30px 0 70px;
+    }
+
+    .combo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+      margin-bottom: 45px;
+    }
+
+    .combo-card {
+      background: var(--bg-white);
+      border: 1px solid var(--line-soft);
+      border-radius: 22px;
+      padding: 24px;
+      box-shadow: var(--shadow-card);
+      text-align: center;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .combo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 16px 30px rgba(0, 0, 0, 0.08);
+      border-color: var(--brand-pink);
+    }
+
+    .combo-card.hot {
+      border: 2px solid var(--brand-pink);
+    }
+
+    .hot-badge {
+      position: absolute;
+      top: -12px;
+      right: 20px;
+      background: var(--brand-pink);
+      color: #fff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 5px 14px;
+      border-radius: var(--radius-pill);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .combo-circle-img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin: 0 auto 16px;
+      overflow: hidden;
+      border: 4px solid var(--bg-cream);
+    }
+
+    .combo-circle-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .combo-pill-title {
+      display: inline-block;
+      background: var(--brand-green-dark);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 18px;
+      border-radius: var(--radius-pill);
+      margin-bottom: 8px;
+    }
+
+    .combo-name {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: #2F332E;
+      margin-bottom: 15px;
+    }
+
+    .combo-list {
+      list-style: none;
+      text-align: left;
+      margin-bottom: 22px;
+      padding: 0 10px;
+    }
+
+    .combo-list li {
+      font-size: 0.9rem;
+      color: #484E45;
+      margin-bottom: 7px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .combo-list li i {
+      color: var(--brand-pink);
+      font-size: 0.8rem;
+    }
+
+    .combo-price-tag {
+      background: #FDF1F4;
+      color: var(--brand-pink);
+      font-weight: 800;
+      font-size: 1.15rem;
+      padding: 8px 16px;
+      border-radius: var(--radius-pill);
+      display: inline-block;
+      margin-bottom: 16px;
+    }
+
+    .btn-combo-book {
+      display: inline-block;
+      color: var(--brand-pink);
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: var(--transition);
+      cursor: pointer;
+    }
+
+    .btn-combo-book:hover {
+      text-decoration: underline;
+    }
+
+    /* 4 Dải cam kết */
+    .commitments-bar {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      background: var(--bg-white);
+      padding: 20px;
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      border: 1px solid var(--line-soft);
+    }
+
+    .commit-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-right: 1px solid var(--line-soft);
+      padding-right: 10px;
+    }
+
+    .commit-item:last-child {
+      border-right: none;
+    }
+
+    .commit-item i {
+      font-size: 1.6rem;
+      color: var(--brand-pink);
+    }
+
+    .commit-item span {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.3;
+    }
+
+    /* ========================================================
+       5. ĐÁNH GIÁ KHÁCH HÀNG (TESTIMONIALS)
+       ======================================================== */
+    .reviews-section {
+      padding: 20px 0 70px;
+    }
+
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .review-card {
+      background: var(--bg-white);
+      border: 1px solid var(--line-soft);
+      border-radius: var(--radius-md);
+      padding: 25px 20px;
+      box-shadow: var(--shadow-card);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .review-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      overflow: hidden;
+      margin-bottom: 14px;
+      border: 3px solid var(--bg-cream);
+    }
+
+    .review-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .review-quote {
+      font-size: 0.92rem;
+      font-style: italic;
+      color: #4F554B;
+      margin-bottom: 12px;
+      line-height: 1.5;
+    }
+
+    .review-author {
+      font-weight: 800;
+      font-size: 0.92rem;
+      color: var(--text-main);
+    }
+
+    .review-role {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+
+    .review-stars {
+      color: #E89E30;
+      font-size: 0.85rem;
+    }
+
+    /* ========================================================
+       6. KHỐI CHÂN TRANG ĐẬM (FOOTER CTA BANNER)
+       ======================================================== */
+    .footer-dark-banner {
+      background: var(--brand-green-dark);
+      color: #E6EAE4;
+      padding: 50px 0 40px;
+      border-top-left-radius: 36px;
+      border-top-right-radius: 36px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr 1.2fr;
+      align-items: center;
+      gap: 35px;
+      padding-bottom: 40px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .footer-brand h3 {
+      font-size: 1.9rem;
+      font-weight: 800;
+      color: #FF7597;
+      margin-bottom: 6px;
+    }
+
+    .footer-brand .slogan {
+      font-size: 1.6rem;
+      color: #FAF6F0;
+    }
+
+    .footer-cta {
+      text-align: center;
+    }
+
+    .footer-cta h4 {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #FAF6F0;
+      margin-bottom: 15px;
+      line-height: 1.4;
+      letter-spacing: 0.5px;
+    }
+
+    .footer-info {
+      font-size: 0.92rem;
+      line-height: 1.8;
+    }
+
+    .footer-info-row {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .footer-info-row i {
+      color: #FF7597;
+      margin-top: 5px;
+    }
+
+    .footer-bottom-line {
+      text-align: center;
+      padding-top: 25px;
+      font-size: 0.88rem;
+      color: #B5BEB2;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .footer-bottom-line i {
+      color: #FF7597;
+    }
+
+    /* ========================================================
+       7. CỬA SỔ POPUP ĐẶT LỊCH (MODAL)
        ======================================================== */
     .modal-overlay {
       position: fixed;
       inset: 0;
       background: rgba(0, 0, 0, 0.6);
-      backdrop-filter: blur(5px);
+      backdrop-filter: blur(4px);
       z-index: 2000;
       display: none;
       align-items: center;
@@ -680,238 +650,143 @@
       display: flex;
     }
 
-    .modal-box {
-      background: var(--kem-nga);
+    .modal-container {
+      background: #FFFFFF;
       width: 100%;
-      max-width: 550px;
-      border-radius: 24px;
-      padding: 40px;
+      max-width: 500px;
+      border-radius: 20px;
+      padding: 35px;
       position: relative;
-      box-shadow: 0 25px 50px rgba(0,0,0,0.25);
-      border: 1px solid var(--be-am);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
 
     .modal-close {
       position: absolute;
-      top: 20px;
-      right: 20px;
-      font-size: 1.5rem;
-      color: var(--xanh-ebony);
+      top: 16px;
+      right: 18px;
       background: none;
       border: none;
+      font-size: 1.6rem;
+      color: var(--text-muted);
       cursor: pointer;
     }
 
-    .modal-title {
-      font-size: 2.2rem;
-      color: var(--xanh-ebony);
-      margin-bottom: 8px;
+    .modal-head-title {
+      font-size: 1.7rem;
+      color: var(--brand-pink);
       text-align: center;
-    }
-
-    .form-group {
-      margin-bottom: 18px;
-    }
-
-    .form-group label {
-      display: block;
-      font-size: 0.88rem;
-      font-weight: 600;
-      color: var(--xanh-ebony);
       margin-bottom: 6px;
+      font-weight: 800;
     }
 
-    .form-control {
+    .modal-desc {
+      text-align: center;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+    }
+
+    .input-group {
+      margin-bottom: 16px;
+    }
+
+    .input-group label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      color: var(--text-main);
+    }
+
+    .form-input {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #D5CEBF;
-      border-radius: 10px;
-      background: var(--white);
+      padding: 12px 14px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #D9D2C5;
       font-family: inherit;
       font-size: 0.95rem;
-      color: var(--text-main);
       outline: none;
       transition: var(--transition);
     }
 
-    .form-control:focus {
-      border-color: var(--hong-dam);
-      box-shadow: 0 0 0 3px rgba(166, 77, 104, 0.15);
+    .form-input:focus {
+      border-color: var(--brand-pink);
+      box-shadow: 0 0 0 3px rgba(199, 56, 102, 0.15);
     }
 
-    .form-grid-2 {
+    .input-row-2 {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 15px;
-    }
-
-    /* Nút liên hệ nổi (Zalo & Hotline) */
-    .quick-contact-fab {
-      position: fixed;
-      bottom: 25px;
-      right: 25px;
-      display: flex;
-      flex-direction: column;
       gap: 12px;
-      z-index: 1500;
-    }
-
-    .fab-btn {
-      width: 56px;
-      height: 56px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--white);
-      font-size: 1.4rem;
-      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
-      transition: var(--transition);
-    }
-
-    .fab-btn:hover {
-      transform: scale(1.1);
-    }
-
-    .fab-phone {
-      background: #25D366;
-    }
-
-    .fab-zalo {
-      background: #0068FF;
-      font-weight: 800;
-      font-size: 0.95rem;
     }
 
     /* ========================================================
-       9. FOOTER
-       ======================================================== */
-    footer {
-      background: var(--dark-green);
-      color: #C5CCC0;
-      padding: 70px 0 30px;
-      border-top: 5px solid var(--hong-dam);
-    }
-
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 1.5fr 1fr 1fr;
-      gap: 50px;
-      margin-bottom: 50px;
-    }
-
-    .footer-brand h2 {
-      color: var(--kem-nga);
-      font-size: 2.2rem;
-      margin-bottom: 15px;
-    }
-
-    .footer-brand p {
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    .footer-links h4, .footer-contact h4 {
-      color: var(--kem-nga);
-      font-size: 1.4rem;
-      margin-bottom: 20px;
-      position: relative;
-    }
-
-    .footer-links ul {
-      list-style: none;
-    }
-
-    .footer-links li {
-      margin-bottom: 10px;
-    }
-
-    .footer-links a:hover {
-      color: var(--hong-dam);
-      padding-left: 6px;
-      transition: var(--transition);
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      margin-bottom: 16px;
-      font-size: 0.95rem;
-    }
-
-    .contact-item i {
-      color: var(--be-am);
-      margin-top: 4px;
-      font-size: 1.1rem;
-    }
-
-    .copyright {
-      text-align: center;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      padding-top: 25px;
-      font-size: 0.85rem;
-      color: #9AA096;
-    }
-
-    /* ========================================================
-       10. RESPONSIVE MEDIA QUERIES
+       8. RESPONSIVE MEDIA QUERIES (MOBILE / TABLET)
        ======================================================== */
     @media (max-width: 992px) {
-      .hero-grid, .story-grid, .footer-grid {
+      .hero-grid {
         grid-template-columns: 1fr;
-      }
-      .hero-content {
         text-align: center;
       }
-      .hero-badges {
-        justify-content: center;
+      .hero-features-bar {
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
       }
-      .hero-cta {
-        justify-content: center;
+      .why-grid, .commitments-bar {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .hero-float-card {
-        left: 20px;
-        bottom: 20px;
-      }
-      .menu-group {
+      .combo-grid, .reviews-grid {
         grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .footer-info-row {
+        justify-content: center;
       }
     }
 
     @media (max-width: 768px) {
-      .top-bar {
-        display: none;
-      }
-      .nav-links {
+      .nav-menu {
         display: none;
         position: absolute;
         top: 100%;
         left: 0;
         right: 0;
-        background: var(--kem-nga);
+        background: var(--bg-cream);
         flex-direction: column;
-        padding: 25px;
+        padding: 20px;
         box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        gap: 18px;
       }
-      .nav-links.active {
+      .nav-menu.active {
         display: flex;
       }
-      .mobile-toggle {
+      .mobile-btn {
         display: block;
       }
-      .main-heading {
-        font-size: 2.2rem;
+      .hero-features-bar {
+        grid-template-columns: repeat(2, 1fr);
       }
-      .hero-content h2 {
-        font-size: 2.6rem;
+      .feature-point:nth-child(2) {
+        border-right: none;
       }
-      .form-grid-2 {
+      .commitments-bar {
         grid-template-columns: 1fr;
       }
-      .privilege-list {
+      .commit-item {
+        border-right: none;
+        border-bottom: 1px solid var(--line-soft);
+        padding-bottom: 10px;
+      }
+      .commit-item:last-child {
+        border-bottom: none;
+      }
+      .input-row-2 {
         grid-template-columns: 1fr;
       }
     }
@@ -919,740 +794,405 @@
 </head>
 <body>
 
-  <!-- TOP INFO BAR -->
-  <aside class="top-bar" aria-label="Thông tin nhanh">
-    <div class="container top-bar-inner">
-      <div class="top-info">
-        <span><i class="fa-solid fa-location-dot" aria-hidden="true"></i> 219 Hùng Vương, Phường 3, TP. Tân An, Long An</span>
-        <span><i class="fa-regular fa-clock" aria-hidden="true"></i> Mở cửa đón khách: 09:00 - 22:00</span>
-      </div>
-      <div>
-        <span><i class="fa-solid fa-phone" aria-hidden="true"></i> Hotline: <strong>05 83 83 0123 - 09 09 09 4333</strong></span>
-      </div>
-    </div>
-  </aside>
-
-  <!-- NAVIGATION BAR -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#" class="brand-logo" aria-label="Trang chủ Mingo Spa">
-        <!-- SVG Biểu tượng chim Hồng Hạc Mingo -->
-        <svg class="logo-icon" viewBox="0 0 100 100" fill="currentColor">
-          <circle cx="50" cy="50" r="45" fill="none" stroke="#A64D68" stroke-width="4"/>
+  <!-- HEADER / THANH ĐIỀU HƯỚNG -->
+  <header class="header-nav">
+    <div class="container nav-wrapper">
+      <a href="#" class="brand-group">
+        <!-- Ảnh logo doanh nghiệp: Tự động dùng logo.png khi bạn tải file lên GitHub -->
+        <img src="logo.png" alt="Mingo Spa" class="brand-img-logo" onerror="this.style.display='none'; document.getElementById('fallback-logo').style.display='inline-block';">
+        <svg id="fallback-logo" style="display:none; height:42px; width:42px; fill:var(--brand-pink);" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="45" fill="none" stroke="currentColor" stroke-width="4"/>
           <path d="M50 20 C42 20 38 28 42 35 C45 40 54 42 55 50 C56 60 48 70 30 75 C45 80 68 76 72 60 C76 45 68 35 56 32 C54 28 54 24 50 20 Z" />
-          <path d="M30 45 C40 42 60 45 70 30 C65 52 45 58 30 45 Z" fill="#A64D68" opacity="0.8"/>
         </svg>
-        <div class="brand-text">
-          <h1>Mingo Spa</h1>
-          <p>Dưỡng Sinh • Gội Đầu Hàn Quốc</p>
-        </div>
+        <span class="brand-title">MINGO SPA</span>
       </a>
 
-      <nav aria-label="Menu chính">
-        <ul class="nav-links" id="navLinks">
-          <li><a href="#ve-chung-toi">Về Mingo</a></li>
-          <li><a href="#combo-hot">Gói Combo Hot</a></li>
-          <li><a href="#menu-dich-vu">Bảng Dịch Vụ</a></li>
-          <li><a href="#khong-gian">Không Gian</a></li>
-          <li><a href="#lien-he">Liên Hệ</a></li>
-        </ul>
-      </nav>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#trang-chu"><i class="fa-solid fa-house"></i> Trang chủ</a></li>
+        <li><a href="#vi-sao-chon"><i class="fa-solid fa-spa"></i> Dịch vụ</a></li>
+        <li><a href="#combo-uu-dai"><i class="fa-solid fa-gift"></i> Combo ưu đãi</a></li>
+        <li><a href="#khong-gian"><i class="fa-regular fa-image"></i> Không gian</a></li>
+        <li><a href="#cam-nhan"><i class="fa-regular fa-star"></i> Cảm nhận khách hàng</a></li>
+      </ul>
 
-      <div style="display: flex; gap: 12px; align-items: center;">
-        <button class="btn btn-primary" onclick="openBookingModal()">
-          <i class="fa-regular fa-calendar-check" aria-hidden="true"></i> Đặt Lịch Ngay
+      <div style="display: flex; gap: 10px; align-items: center;">
+        <button class="btn-book" onclick="openBooking('Đặt Lịch Từ Header')">
+          <i class="fa-regular fa-calendar-check"></i> Đặt lịch ngay
         </button>
-        <button class="mobile-toggle" id="mobileToggle" aria-label="Mở thực đơn">
-          <i class="fa-solid fa-bars" aria-hidden="true"></i>
+        <button class="mobile-btn" onclick="toggleMenu()" aria-label="Mở thực đơn">
+          <i class="fa-solid fa-bars"></i>
         </button>
       </div>
     </div>
   </header>
 
-  <main>
-  <!-- HERO BANNER -->
-  <section class="hero">
-    <div class="container hero-grid">
-      <div class="hero-content">
-        <span class="sub-badge">Chữa Lành & Phục Hồi Năng Lượng</span>
-        <h2>Thư Giãn Thân Tâm Cùng <span>Mingo Spa</span></h2>
-        <p class="hero-desc">
-          Trải nghiệm liệu trình gội đầu dưỡng sinh Hàn Quốc và massage trị liệu chuyên sâu trong không gian thảo dược ấm cúng, thư thái và chuẩn phong cách quý phái.
-        </p>
+  <main id="trang-chu">
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="container hero-grid">
+        <div class="hero-text-wrap">
+          <p class="hero-quote calligraphy">Thư giãn là cách bạn nạp lại năng lượng để sống tốt hơn mỗi ngày. <i class="fa-regular fa-heart" style="color: var(--brand-pink); font-size: 1.5rem;"></i></p>
+          <h1 class="hero-main-title">MINGO SPA</h1>
+          <p class="hero-sub-title">Massage dưỡng sinh – Gội đầu Hàn Quốc</p>
 
-        <div class="hero-badges">
-          <div class="badge-item"><i class="fa-solid fa-mug-hot" aria-hidden="true"></i> Trà &amp; Súp Thực Dưỡng Free</div>
-          <div class="badge-item"><i class="fa-solid fa-spa" aria-hidden="true"></i> Đá Muối Himalaya</div>
-          <div class="badge-item"><i class="fa-solid fa-bath" aria-hidden="true"></i> Bồn Thuốc Dao Đỏ</div>
-          <div class="badge-item"><i class="fa-solid fa-heart" aria-hidden="true"></i> Phòng Cặp Đôi Riêng Tư</div>
-        </div>
+          <!-- 4 Khối biểu tượng -->
+          <div class="hero-features-bar">
+            <div class="feature-point">
+              <i class="fa-solid fa-spa"></i>
+              <p>Thư giãn sâu</p>
+            </div>
+            <div class="feature-point">
+              <i class="fa-regular fa-heart"></i>
+              <p>Phục hồi năng lượng</p>
+            </div>
+            <div class="feature-point">
+              <i class="fa-regular fa-circle-check"></i>
+              <p>Chăm sóc toàn diện</p>
+            </div>
+            <div class="feature-point">
+              <i class="fa-regular fa-face-smile"></i>
+              <p>Phù hợp cả nam và nữ</p>
+            </div>
+          </div>
 
-        <div class="hero-cta">
-          <button class="btn btn-primary" onclick="openBookingModal()">
-            <i class="fa-solid fa-hand-sparkles" aria-hidden="true"></i> Đặt Chỗ Nhận Ưu Đãi
+          <button class="btn-book" onclick="openBooking('Đặt Lịch Từ Hero')">
+            <i class="fa-regular fa-calendar-check"></i> Đặt lịch ngay <i class="fa-solid fa-chevron-right" style="font-size: 0.75rem;"></i>
           </button>
-          <a href="#combo-hot" class="btn btn-outline">Xem Menu Combo</a>
         </div>
-      </div>
 
-      <div class="hero-image-wrapper">
-        <div class="hero-img-card">
-          <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Không gian thư giãn Mingo Spa">
-        </div>
-        <div class="hero-float-card">
-          <i class="fa-solid fa-award" aria-hidden="true"></i>
-          <div>
-            <h4>Đặc Quyền Thành Viên</h4>
-            <p>Tặng kèm ngâm chân thảo dược &amp; xông hơi tươi</p>
+        <div class="hero-img-box">
+          <div class="hero-main-img">
+            <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Không gian dưỡng sinh thư giãn Mingo Spa">
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- STORY & PHILOSOPHY -->
-  <section class="story-section" id="ve-chung-toi">
-    <div class="container story-grid">
-      <div class="story-quote-box">
-        <blockquote>
-          "Mingo là viết tắt tên của chim Hồng Hạc — loài chim Tiên cao quý, ngụ ý rằng mỗi vị khách đến với Mingo Spa đều xứng đáng được tôn vinh và tận hưởng những gì tuyệt vời nhất cho sức khỏe & sắc đẹp."
-        </blockquote>
-        <div class="story-author">— Thông Điệp Từ Mingo Spa</div>
-      </div>
+    <!-- SECTION: VÌ SAO NÊN CHỌN MINGO SPA? -->
+    <section class="why-section" id="vi-sao-chon">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="title-with-lotus">
+            <i class="fa-solid fa-spa"></i> Vì sao nên chọn Mingo Spa?
+          </h2>
+          <p class="section-subtitle">Không chỉ là thư giãn, mà còn là hành trình chăm sóc sức khỏe và sắc đẹp từ bên trong.</p>
+        </div>
 
-      <div class="story-details">
-        <span class="sub-badge">Triết Lý Của Chúng Tôi</span>
-        <h2 class="main-heading" style="margin-bottom: 20px;">Nơi Thân Khỏe, Tâm An & Tràn Đầy Sức Sống</h2>
-        <p>
-          Tại <strong>Mingo Spa</strong>, từng giọt dầu gội thảo dược, viên đá nóng bazan cho đến đôi bàn tay trị liệu của chuyên viên đều được chăm chút kỹ lưỡng để mang đến cho bạn sự thả lỏng tuyệt đối sau những giờ làm việc mệt mỏi.
-        </p>
-        
-        <div class="privilege-card">
-          <h4><i class="fa-solid fa-gift" style="color: var(--hong-dam);" aria-hidden="true"></i> Tặng Quý Khách Có Mã Thành Viên:</h4>
-          <ul class="privilege-list">
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Ngâm chân đá muối Himalaya</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Tủ quần áo cá nhân riêng biệt</li>
-            <li><i class="fa-solid fa-check-circle" aria-hidden="true"></i> Thức ăn nhẹ dinh dưỡng &amp; thức uống</li>
-          </ul>
+        <div class="why-grid">
+          <div class="why-card">
+            <i class="fa-solid fa-leaf why-icon"></i>
+            <h4>Không gian sang trọng, ấm cúng</h4>
+          </div>
+          <div class="why-card">
+            <i class="fa-solid fa-user-nurse why-icon"></i>
+            <h4>Đội ngũ chuyên viên chuyên nghiệp</h4>
+          </div>
+          <div class="why-card">
+            <i class="fa-solid fa-pump-soap why-icon"></i>
+            <h4>Sản phẩm an toàn, thân thiện</h4>
+          </div>
+          <div class="why-card">
+            <i class="fa-regular fa-face-smile-beam why-icon"></i>
+            <h4>Dịch vụ đa dạng, đáp ứng mọi nhu cầu</h4>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- COMBO PACKAGES (MENU 1) -->
-  <section class="combos-section" id="combo-hot">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="sub-badge">Gói Trọn Gói Tiết Kiệm</span>
-        <h2 class="main-heading">Menu Combo Dưỡng Sinh Toàn Diện</h2>
-        <p style="color: var(--text-muted); margin-top: 10px;">
-          Tận hưởng chuỗi dịch vụ kết hợp giúp phục hồi toàn thân nhanh chóng với mức giá cực kỳ ưu đãi.
-        </p>
-      </div>
+    <!-- SECTION: CÁC COMBO DỊCH VỤ NỔI BẬT -->
+    <section class="combo-section" id="combo-uu-dai">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 class="title-with-lotus">
+            <i class="fa-solid fa-spa"></i> Các Combo Dịch Vụ Nổi Bật
+          </h2>
+          <p class="section-subtitle">Lựa chọn gói dịch vụ phù hợp để tận hưởng trọn vẹn sự thư giãn và chăm sóc sức khỏe.</p>
+        </div>
 
-      <div class="combos-grid">
-        <!-- Combo 1 -->
-        <div class="combo-card">
-          <div class="combo-header">
-            <h3>COMBO 1</h3>
-            <div class="price-wrap">
-              <span class="current-price">325K</span>
-              <span class="old-price">425K</span>
+        <div class="combo-grid">
+          <!-- Combo 1 -->
+          <div class="combo-card">
+            <div class="combo-circle-img">
+              <img src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?auto=format&fit=crop&w=400&q=80" alt="Combo 1 Thư giãn nhẹ nhàng">
+            </div>
+            <span class="combo-pill-title">Combo 1</span>
+            <h3 class="combo-name">Thư giãn nhẹ nhàng</h3>
+            <ul class="combo-list">
+              <li><i class="fa-solid fa-check"></i> Ngâm chân đá muối</li>
+              <li><i class="fa-solid fa-check"></i> Xông hơi thảo dược</li>
+              <li><i class="fa-solid fa-check"></i> Massage body 60 phút</li>
+            </ul>
+            <div class="combo-price-tag">Chỉ từ 785.000đ</div>
+            <div>
+              <span class="btn-combo-book" onclick="openBooking('Combo 1 - Thư giãn nhẹ nhàng (785K)')">Đặt lịch ngay &gt;</span>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối thảo dược</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm bồn thuốc Dao Đỏ</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Chà lưng tẩy tế bào chết</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Gội đầu chuyên sâu Hàn Quốc</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Chăm sóc da mặt chuyên sâu</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Massage cổ vai gáy ấn huyệt</li>
-          </ul>
-          <button class="btn btn-outline" style="width: 100%;" onclick="selectCombo('Combo 1 - 325K')">Chọn Combo Này</button>
-        </div>
 
-        <!-- Combo 2 -->
-        <div class="combo-card popular">
-          <span class="popular-tag">Bán Chạy Nhất</span>
-          <div class="combo-header">
-            <h3>COMBO 2</h3>
-            <div class="price-wrap">
-              <span class="current-price">395K</span>
-              <span class="old-price">565K</span>
+          <!-- Combo 2 (Ưu đãi Hot) -->
+          <div class="combo-card hot">
+            <span class="hot-badge">Ưu đãi Hot</span>
+            <div class="combo-circle-img">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=400&q=80" alt="Combo 2 Phục hồi năng lượng">
+            </div>
+            <span class="combo-pill-title">Combo 2</span>
+            <h3 class="combo-name">Phục hồi năng lượng</h3>
+            <ul class="combo-list">
+              <li><i class="fa-solid fa-check"></i> Ngâm chân đá muối</li>
+              <li><i class="fa-solid fa-check"></i> Xông hơi thảo dược</li>
+              <li><i class="fa-solid fa-check"></i> Massage body 90 phút</li>
+            </ul>
+            <div class="combo-price-tag">Chỉ từ 925.000đ</div>
+            <div>
+              <span class="btn-combo-book" onclick="openBooking('Combo 2 - Phục hồi năng lượng (925K)')">Đặt lịch ngay &gt;</span>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm bồn thuốc Dao Đỏ</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Chà lưng tẩy tế bào chết</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> <strong>Massage body 60 phút</strong></li>
-          </ul>
-          <button class="btn btn-primary" style="width: 100%;" onclick="selectCombo('Combo 2 - 395K')">Chọn Combo Này</button>
-        </div>
 
-        <!-- Combo 3 -->
-        <div class="combo-card">
-          <div class="combo-header">
-            <h3>COMBO 3</h3>
-            <div class="price-wrap">
-              <span class="current-price">395K</span>
-              <span class="old-price">535K</span>
+          <!-- Combo 3 -->
+          <div class="combo-card">
+            <div class="combo-circle-img">
+              <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=400&q=80" alt="Combo 3 Chăm sóc toàn diện">
+            </div>
+            <span class="combo-pill-title">Combo 3</span>
+            <h3 class="combo-name">Chăm sóc toàn diện</h3>
+            <ul class="combo-list">
+              <li><i class="fa-solid fa-check"></i> Ngâm chân đá muối</li>
+              <li><i class="fa-solid fa-check"></i> Xông hơi thảo dược</li>
+              <li><i class="fa-solid fa-check"></i> Massage body 120 phút</li>
+            </ul>
+            <div class="combo-price-tag">Chỉ từ 1.095.000đ</div>
+            <div>
+              <span class="btn-combo-book" onclick="openBooking('Combo 3 - Chăm sóc toàn diện (1.095K)')">Đặt lịch ngay &gt;</span>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Gội đầu cơ bản 30 phút</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> <strong>Massage body 60 phút</strong></li>
-          </ul>
-          <button class="btn btn-outline" style="width: 100%;" onclick="selectCombo('Combo 3 - 395K')">Chọn Combo Này</button>
         </div>
 
-        <!-- Combo 4 -->
-        <div class="combo-card">
-          <div class="combo-header">
-            <h3>COMBO 4</h3>
-            <div class="price-wrap">
-              <span class="current-price">495K</span>
-              <span class="old-price">625K</span>
+        <!-- Dải 4 cam kết giá trị -->
+        <div class="commitments-bar" id="khong-gian">
+          <div class="commit-item">
+            <i class="fa-regular fa-gem"></i>
+            <span>Cam kết chất lượng dịch vụ</span>
+          </div>
+          <div class="commit-item">
+            <i class="fa-regular fa-heart"></i>
+            <span>An toàn tuyệt đối cho sức khỏe</span>
+          </div>
+          <div class="commit-item">
+            <i class="fa-solid fa-gift"></i>
+            <span>Nhiều ưu đãi hấp dẫn cho khách hàng thân thiết</span>
+          </div>
+          <div class="commit-item">
+            <i class="fa-solid fa-headset"></i>
+            <span>Tư vấn và đặt lịch nhanh chóng</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: KHÁCH HÀNG NÓI GÌ VỀ MINGO SPA? -->
+    <section class="reviews-section" id="cam-nhan">
+      <div class="container">
+        <div class="section-header" style="text-align: center;">
+          <h2 class="title-with-lotus">
+            <i class="fa-solid fa-spa"></i> Khách hàng nói gì về Mingo Spa?
+          </h2>
+        </div>
+
+        <div class="reviews-grid">
+          <div class="review-card">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Chị Thu Hà">
+            </div>
+            <p class="review-quote">"Sau buổi massage, mình thấy nhẹ người, thoải mái và ngủ ngon hơn hẳn."</p>
+            <div class="review-author">Chị Thu Hà</div>
+            <div class="review-role">Nhân viên văn phòng</div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Gội đầu chuyên sâu 60 phút</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Chăm sóc da mặt chuyên sâu</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> <strong>Massage body 60 phút</strong></li>
-          </ul>
-          <button class="btn btn-outline" style="width: 100%;" onclick="selectCombo('Combo 4 - 495K')">Chọn Combo Này</button>
-        </div>
 
-        <!-- Combo 5 -->
-        <div class="combo-card">
-          <div class="combo-header">
-            <h3>COMBO 5</h3>
-            <div class="price-wrap">
-              <span class="current-price">495K</span>
-              <span class="old-price">635K</span>
+          <div class="review-card">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=200&q=80" alt="Anh Minh Quân">
+            </div>
+            <p class="review-quote">"Dịch vụ chuyên nghiệp, không gian thư giãn, rất đáng trải nghiệm!"</p>
+            <div class="review-author">Anh Minh Quân</div>
+            <div class="review-role">Doanh nhân</div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Gội đầu cơ bản 30 phút</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> <strong>Massage chuyên sâu 90 phút</strong></li>
-          </ul>
-          <button class="btn btn-outline" style="width: 100%;" onclick="selectCombo('Combo 5 - 495K')">Chọn Combo Này</button>
-        </div>
 
-        <!-- Combo 6 -->
-        <div class="combo-card popular">
-          <span class="popular-tag">VIP Toàn Diện</span>
-          <div class="combo-header">
-            <h3>COMBO 6</h3>
-            <div class="price-wrap">
-              <span class="current-price">545K</span>
-              <span class="old-price">725K</span>
+          <div class="review-card">
+            <div class="review-avatar">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=200&q=80" alt="Chị Ngọc Anh">
+            </div>
+            <p class="review-quote">"Mình rất hài lòng, sẽ quay lại thường xuyên và giới thiệu cho bạn bè."</p>
+            <div class="review-author">Chị Ngọc Anh</div>
+            <div class="review-role">Kế toán</div>
+            <div class="review-stars">
+              <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
             </div>
           </div>
-          <ul class="combo-services">
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Ngâm chân đá muối</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Xông hơi thảo dược tươi</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Gội đầu chuyên sâu 60 phút</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> Chăm sóc phục hồi da mặt</li>
-            <li><i class="fa-solid fa-feather" aria-hidden="true"></i> <strong>Massage trị liệu 90 phút</strong></li>
-          </ul>
-          <button class="btn btn-primary" style="width: 100%;" onclick="selectCombo('Combo 6 - 545K')">Chọn Combo Này</button>
         </div>
       </div>
-      
-      <div style="text-align: center; margin-top: 30px; font-size: 0.95rem; color: var(--text-muted);">
-        <i class="fa-solid fa-circle-info" style="color: var(--hong-dam);" aria-hidden="true"></i> Có phòng cặp đôi &amp; phòng riêng tư VIP theo yêu cầu (chỉ +49K).
-      </div>
-    </div>
-  </section>
-
-  <!-- ALACARTE MENU (MENU 2 TABS) -->
-  <section class="menu-tabs-section" id="menu-dich-vu">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="sub-badge">Dịch Vụ Lẻ Chi Tiết</span>
-        <h2 class="main-heading">Menu Dịch Vụ Mingo Spa</h2>
-        <p style="color: var(--text-muted); margin-top: 10px;">Lựa chọn từng dịch vụ chuyên biệt phù hợp nhất với thể trạng của bạn.</p>
-      </div>
-
-      <!-- Tab Buttons -->
-      <div class="tab-nav">
-        <button class="tab-btn active" onclick="switchTab('tab-goi')">Gội Đầu Hàn Quốc</button>
-        <button class="tab-btn" onclick="switchTab('tab-tri-lieu')">Massage Trị Liệu</button>
-        <button class="tab-btn" onclick="switchTab('tab-massage-body')">Massage Body & Thư Giãn</button>
-        <button class="tab-btn" onclick="switchTab('tab-xong-hoi')">Xông Hơi & Ngâm Bồn</button>
-      </div>
-
-      <!-- Tab 1: Gội Đầu -->
-      <div class="menu-group active" id="tab-goi">
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Gội Đầu Hàn Quốc Cơ Bản</div>
-            <div class="item-desc">Làm sạch da đầu thảo mộc tự nhiên, thông thoáng chân tóc.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">95K</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Gội Chuyên Sâu + Chăm Sóc Da Mặt</div>
-            <div class="item-desc">Massage bấm huyệt da đầu, đắp mặt nạ dưỡng ẩm chuyên sâu.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">185K</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Bổ Não An Thần + Chăm Sóc Da Mặt</div>
-            <div class="item-desc">Liệu pháp đả thông kinh lạc vùng đầu, giảm đau đầu, mất ngủ.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">285K</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 2: Trị Liệu Cổ Vai Gáy & Thận -->
-      <div class="menu-group" id="tab-tri-lieu">
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Trị Liệu Cổ - Vai - Gáy (45 Phút)</div>
-            <div class="item-desc">Giải phóng bó cơ, giải tỏa co cứng cho dân văn phòng.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">225K</span>
-            <span class="time">45 Phút</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Trị Liệu Cổ - Vai - Gáy (60 Phút)</div>
-            <div class="item-desc">Trị liệu chuyên sâu kèm đắp cao ngải cứu ấm nóng.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">295K</span>
-            <span class="time">60 Phút</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Trị Liệu Thắt Lưng & Thận (60 Phút)</div>
-            <div class="item-desc">Bấm huyệt dưỡng khí, phục hồi cột sống lưng dưới.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">325K</span>
-            <span class="time">60 Phút</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Trị Liệu Thắt Lưng & Thận (90 Phút)</div>
-            <div class="item-desc">Tăng cường lưu thông khí huyết kết hợp thảo dược ấm.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">425K</span>
-            <span class="time">90 Phút</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Máy Năng Lượng Hồng Quang Tần Phổ</div>
-            <div class="item-desc">Công nghệ quang phổ thấu nhiệt sâu giúp tan nhức mỏi.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">285K - 385K</span>
-            <span class="time">40' - 70'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Đung Đường, Thải Độc Tử Cung</div>
-            <div class="item-desc">Dưỡng ấm cung, thải độc khí hàn cho phái đẹp.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">265K</span>
-            <span class="time">50 Phút</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 3: Massage Body & Chuyên Biệt -->
-      <div class="menu-group" id="tab-massage-body">
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Thụy Điển (Ấn Huyệt - Vuốt Dầu)</div>
-            <div class="item-desc">Êm ái, kích thích hệ bạch huyết và làm dịu tinh thần.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">265K - 365K</span>
-            <span class="time">60' - 90'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Kết Hợp Thái + Cổ Truyền (Đá Nóng)</div>
-            <div class="item-desc">Kéo giãn cơ gân kết hợp nhiệt năng đá bazan tự nhiên.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">295K - 495K</span>
-            <span class="time">60' / 90' / 120'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Bụng + Eo + Đùi</div>
-            <div class="item-desc">Trợ chức năng tiêu hóa, tiêu trừ đầy hơi và giảm mỡ thừa.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">245K - 325K</span>
-            <span class="time">45' - 60'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Mẹ Bầu (3 - 7 Tháng)</div>
-            <div class="item-desc">Xoa bóp nhẹ nhàng với tinh dầu tự nhiên an toàn cho mẹ và bé.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">225K - 265K</span>
-            <span class="time">45' - 60'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Massage Bấm Huyệt Chân (Foot Massage)</div>
-            <div class="item-desc">Kích hoạt các huyệt vị lòng bàn chân, giải tỏa đau nhức khớp.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">225K - 285K</span>
-            <span class="time">45' - 60'</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Giác Hơi Cổ Truyền</div>
-            <div class="item-desc">Thải trừ phong hàn, điều hòa kinh mạch toàn thân.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">165K</span>
-            <span class="time">40 Phút</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Tab 4: Xông Hơi & Thủy Liệu -->
-      <div class="menu-group" id="tab-xong-hoi">
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Xông Hơi Thảo Dược / Xông Khô Bắc Âu</div>
-            <div class="item-desc">Đào thải độc tố qua tuyến mồ hôi, nhẹ bẫng toàn thân.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">79K</span>
-            <span class="time">Freetime</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Ngâm Bồn Gỗ Thuốc Dao Đỏ</div>
-            <div class="item-desc">Bài thuốc bí truyền người Dao Đỏ giúp ấm tạng phủ, dịu xương khớp.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">125K</span>
-            <span class="time">20 Phút</span>
-          </div>
-        </div>
-
-        <div class="menu-item-row">
-          <div>
-            <div class="item-name">Combo Xông Hơi Thảo Dược + Ngâm Bồn Dao Đỏ</div>
-            <div class="item-desc">Liệu trình kép thải độc trọn vẹn, tái tạo làn da mịn màng.</div>
-          </div>
-          <div class="item-cost">
-            <span class="price">165K</span>
-            <span class="time">Freetime</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- AMBIANCE & GALLERY -->
-  <section class="gallery-section" id="khong-gian">
-    <div class="container">
-      <div class="section-title-wrap">
-        <span class="sub-badge">Không Gian Nghỉ Dưỡng</span>
-        <h2 class="main-heading">Cảm Nhận Sự Bình Yên Tại Mingo</h2>
-        <p style="color: var(--text-muted); margin-top: 10px;">
-          Tông màu ấm dịu, ánh đèn vàng thư thái và tiếng nhạc thiền nhẹ nhàng tách biệt bạn khỏi mọi xô bồ phố thị.
-        </p>
-      </div>
-
-      <div class="gallery-grid">
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=600&q=80" alt="Giường massage cao cấp">
-          <div class="gallery-overlay">
-            <h4>Phòng Trị Liệu Cao Cấp</h4>
-            <p>Khăn phủ sạch tiệt trùng, nệm êm ái</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?auto=format&fit=crop&w=600&q=80" alt="Bồn ngâm thảo dược">
-          <div class="gallery-overlay">
-            <h4>Khu Vực Ngâm Bồn Dao Đỏ</h4>
-            <p>Nước thuốc thơm nồng thảo mộc vùng cao</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?auto=format&fit=crop&w=600&q=80" alt="Khu vực gội đầu dưỡng sinh">
-          <div class="gallery-overlay">
-            <h4>Giường Gội Đầu Vòm Nước</h4>
-            <p>Thư giãn tối đa với dòng nước tuần hoàn ấm</p>
-          </div>
-        </div>
-
-        <div class="gallery-item">
-          <img src="https://images.unsplash.com/photo-1519710164239-da123dc03ef4?auto=format&fit=crop&w=600&q=80" alt="Khu vực thưởng trà và súp dinh dưỡng">
-          <div class="gallery-overlay">
-            <h4>Trà Hoa &amp; Súp Dưỡng Sinh</h4>
-            <p>Bổ dưỡng, thanh nhiệt sau mỗi liệu trình</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer id="lien-he">
+  <!-- FOOTER CTA BANNER -->
+  <footer class="footer-dark-banner">
     <div class="container">
       <div class="footer-grid">
+        <!-- Logo & Slogan -->
         <div class="footer-brand">
-          <h2>Mingo Spa</h2>
-          <p>
-            Tự hào là điểm đến chăm sóc sức khỏe, dưỡng sinh đông y và gội đầu Hàn Quốc hàng đầu tại Tân An. Chúng tôi cam kết mang lại sự tận tâm, chuyên nghiệp và phục hồi năng lượng trọn vẹn nhất cho bạn.
-          </p>
-          <div style="display: flex; gap: 15px; font-size: 1.3rem;">
-            <a href="#" style="color: var(--be-am);" aria-label="Facebook Mingo Spa"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" style="color: var(--be-am);" aria-label="Tiktok Mingo Spa"><i class="fa-brands fa-tiktok"></i></a>
-            <a href="#" style="color: var(--be-am);" aria-label="Instagram Mingo Spa"><i class="fa-brands fa-instagram"></i></a>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+            <img src="logo.png" alt="Mingo Spa Logo" style="height: 42px; width: auto;" onerror="this.style.display='none'">
+            <h3>MINGO SPA</h3>
           </div>
+          <div class="slogan calligraphy">Thư giãn hôm nay – Hạnh phúc ngày mai</div>
         </div>
 
-        <div class="footer-links">
-          <h4>Dịch Vụ Nổi Bật</h4>
-          <ul>
-            <li><a href="#combo-hot">Combo Dưỡng Sinh 1 - 6</a></li>
-            <li><a href="#menu-dich-vu">Gội Đầu Hàn Quốc Chuyên Sâu</a></li>
-            <li><a href="#menu-dich-vu">Massage Trị Liệu Cổ Vai Gáy</a></li>
-            <li><a href="#menu-dich-vu">Massage Đá Nóng Toàn Thân</a></li>
-            <li><a href="#menu-dich-vu">Ngâm Bồn Thuốc Dao Đỏ</a></li>
-          </ul>
+        <!-- Khối Đặt Lịch Ở Giữa -->
+        <div class="footer-cta">
+          <h4>ĐẶT LỊCH NGAY ĐỂ TẬN HƯỞNG<br>DỊCH VỤ TUYỆT VỜI TẠI MINGO SPA!</h4>
+          <button class="btn-book" onclick="openBooking('Đặt Lịch Từ Footer')">
+            <i class="fa-regular fa-calendar-check"></i> Đặt lịch ngay &gt;
+          </button>
         </div>
 
-        <div class="footer-contact">
-          <h4>Thông Tin Liên Hệ</h4>
-          <div class="contact-item">
-            <i class="fa-solid fa-location-dot"></i>
-            <div>219 Hùng Vương, Phường 3, TP. Tân An, Tỉnh Long An</div>
-          </div>
-          <div class="contact-item">
+        <!-- Thông Tin Liên Hệ -->
+        <div class="footer-info">
+          <div class="footer-info-row">
             <i class="fa-solid fa-phone"></i>
-            <div>
-              <a href="tel:0583830123">05 83 83 0123</a><br>
-              <a href="tel:0909094333">09 09 09 4333</a>
-            </div>
+            <span><strong>05 83 83 0123 - 09 09 09 4333</strong></span>
           </div>
-          <div class="contact-item">
-            <i class="fa-solid fa-clock"></i>
-            <div>09:00 - 22:00 (Tất cả các ngày trong tuần)</div>
+          <div class="footer-info-row">
+            <i class="fa-solid fa-location-dot"></i>
+            <span>219 Hùng Vương, P3, TP. Tân An, Long An</span>
+          </div>
+          <div class="footer-info-row">
+            <i class="fa-regular fa-clock"></i>
+            <span>Mở cửa: 8:00 – 21:00 hàng ngày</span>
           </div>
         </div>
       </div>
 
-      <div class="copyright">
-        &copy; 2026 Mingo Spa. Bản quyền thuộc về Mingo Spa - Tân An, Long An.
+      <!-- Dòng Bản Quyền Cuối Cùng Kèm Icon Hoa Sen -->
+      <div class="footer-bottom-line">
+        <i class="fa-solid fa-spa"></i>
+        <span>Mingo Spa – Đồng hành cùng bạn trên hành trình chăm sóc sức khỏe và sắc đẹp toàn diện.</span>
       </div>
     </div>
   </footer>
 
-  <!-- QUICK CONTACT FLOATING ACTION BUTTONS -->
-  <div class="quick-contact-fab" aria-label="Liên hệ nhanh">
-    <a href="https://zalo.me/0583830123" target="_blank" rel="noopener noreferrer" class="fab-btn fab-zalo" title="Chat Zalo Đặt Lịch">
-      Zalo
-    </a>
-    <a href="tel:0583830123" class="fab-btn fab-phone" title="Gọi Hotline">
-      <i class="fa-solid fa-phone" aria-hidden="true"></i>
-    </a>
-  </div>
-
-  <!-- BOOKING MODAL -->
+  <!-- MODAL POPUP FORM ĐẶT LỊCH -->
   <div class="modal-overlay" id="bookingModal" onclick="closeModalOnBackdrop(event)">
-    <div class="modal-box">
-      <button class="modal-close" onclick="closeBookingModal()" aria-label="Đóng cửa sổ đặt lịch">&times;</button>
-      <h3 class="modal-title">Đặt Lịch Hẹn</h3>
-      <p style="text-align: center; color: var(--text-muted); margin-bottom: 25px; font-size: 0.9rem;">
-        Quý khách vui lòng để lại thông tin, Mingo Spa sẽ liên hệ xác nhận trong vòng 5 phút!
-      </p>
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeBooking()">&times;</button>
+      <h3 class="modal-head-title">Đặt Lịch Hẹn Trải Nghiệm</h3>
+      <p class="modal-desc">Vui lòng điền thông tin bên dưới, Mingo Spa sẽ liên hệ xác nhận với bạn ngay lập tức.</p>
 
-      <form id="bookingForm" onsubmit="handleBookingSubmit(event)">
-        <div class="form-group">
-          <label for="custName">Họ và Tên của Bạn *</label>
-          <input type="text" id="custName" class="form-control" placeholder="Ví dụ: Nguyễn Thùy Dung" required>
+      <form onsubmit="submitBooking(event)">
+        <div class="input-group">
+          <label for="clientName">Họ và Tên *</label>
+          <input type="text" id="clientName" class="form-input" placeholder="Ví dụ: Chị Thu Hà" required>
         </div>
 
-        <div class="form-group">
-          <label for="custPhone">Số Điện Thoại Nhận Tin Nhắn *</label>
-          <input type="tel" id="custPhone" class="form-control" placeholder="Ví dụ: 0909 000 123" required>
+        <div class="input-group">
+          <label for="clientPhone">Số Điện Thoại *</label>
+          <input type="tel" id="clientPhone" class="form-input" placeholder="Ví dụ: 0909 123 456" required>
         </div>
 
-        <div class="form-grid-2">
-          <div class="form-group">
-            <label for="bookDate">Ngày Hẹn</label>
-            <input type="date" id="bookDate" class="form-control" required>
+        <div class="input-row-2">
+          <div class="input-group">
+            <label for="bookingDate">Ngày Hẹn</label>
+            <input type="date" id="bookingDate" class="form-input" required>
           </div>
-          <div class="form-group">
-            <label for="bookTime">Giờ Dự Kiến</label>
-            <input type="time" id="bookTime" class="form-control" required>
+          <div class="input-group">
+            <label for="bookingTime">Giờ Hẹn</label>
+            <input type="time" id="bookingTime" class="form-input" required>
           </div>
         </div>
 
-        <div class="form-group">
-          <label for="serviceSelect">Dịch Vụ Bạn Quan Tâm</label>
-          <select id="serviceSelect" class="form-control">
-            <option value="Combo 1 - 325K">Combo 1 (Gội Chuyên Sâu + Cổ Vai Gáy - 325K)</option>
-            <option value="Combo 2 - 395K" selected>Combo 2 (Xông Hơi + Body 60' - 395K)</option>
-            <option value="Combo 3 - 395K">Combo 3 (Gội Đầu + Body 60' - 395K)</option>
-            <option value="Combo 4 - 495K">Combo 4 (Gội Chuyên Sâu + Body 60' - 495K)</option>
-            <option value="Combo 5 - 495K">Combo 5 (Gội Đầu + Massage 90' - 495K)</option>
-            <option value="Combo 6 - 545K">Combo 6 (Gói VIP Toàn Diện 90' - 545K)</option>
-            <option value="Gội Đầu Hàn Quốc">Gội Đầu Hàn Quốc</option>
-            <option value="Massage Cổ Vai Gáy">Massage Trị Liệu Cổ Vai Gáy</option>
-            <option value="Massage Body Thụy Điển/Thái">Massage Thụy Điển / Massage Thái</option>
-            <option value="Ngâm Bồn Thuốc Dao Đỏ">Ngâm Bồn Gỗ Thuốc Dao Đỏ</option>
+        <div class="input-group">
+          <label for="selectedPackage">Gói Dịch Vụ</label>
+          <select id="selectedPackage" class="form-input">
+            <option value="Combo 1 - Thư giãn nhẹ nhàng (785K)">Combo 1 - Thư giãn nhẹ nhàng (Chỉ từ 785K)</option>
+            <option value="Combo 2 - Phục hồi năng lượng (925K)">Combo 2 - Phục hồi năng lượng (Chỉ từ 925K)</option>
+            <option value="Combo 3 - Chăm sóc toàn diện (1.095K)">Combo 3 - Chăm sóc toàn diện (Chỉ từ 1.095K)</option>
+            <option value="Gội đầu dưỡng sinh Hàn Quốc">Gội đầu dưỡng sinh Hàn Quốc</option>
+            <option value="Massage trị liệu cổ vai gáy">Massage trị liệu cổ vai gáy</option>
           </select>
         </div>
 
-        <div class="form-group">
-          <label for="roomReq">Yêu Cầu Phòng</label>
-          <select id="roomReq" class="form-control">
-            <option value="Phòng Tiêu Chuẩn">Phòng Thư Giãn Tiêu Chuẩn</option>
-            <option value="Phòng Cặp Đôi (+49K)">Phòng Riêng Cặp Đôi (+49K)</option>
-            <option value="Phòng VIP Đơn (+49K)">Phòng Riêng VIP Cá Nhân (+49K)</option>
-          </select>
-        </div>
-
-        <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: 10px;">
-          Xác Nhận Đặt Lịch Qua Zalo
+        <button type="submit" class="btn-book" style="width: 100%; margin-top: 10px;">
+          Gửi Yêu Cầu Đặt Lịch
         </button>
       </form>
     </div>
   </div>
 
-  <!-- JAVASCRIPT LOGIC -->
+  <!-- JAVASCRIPT ĐIỀU KHIỂN -->
   <script>
-    // 1. Mobile Menu Toggle
-    const mobileToggle = document.getElementById('mobileToggle');
-    const navLinks = document.getElementById('navLinks');
+    // Bật/tắt thanh menu trên thiết bị di động
+    function toggleMenu() {
+      const menu = document.getElementById('navMenu');
+      menu.classList.toggle('active');
+    }
 
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('active');
-    });
-
-    document.querySelectorAll('.nav-links a').forEach(link => {
-      link.addEventListener('click', () => {
-        navLinks.classList.remove('active');
+    // Đóng menu khi bấm vào từng đường dẫn
+    document.querySelectorAll('.nav-menu a').forEach(item => {
+      item.addEventListener('click', () => {
+        document.getElementById('navMenu').classList.remove('active');
       });
     });
 
-    // 2. Menu Tabs Navigation
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
-      document.querySelectorAll('.menu-group').forEach(group => group.classList.remove('active'));
-
-      event.target.classList.add('active');
-      const targetGroup = document.getElementById(tabId);
-      if (targetGroup) {
-        targetGroup.classList.add('active');
-      }
-    }
-
-    // 3. Modal Booking Management
+    // Quản lý Modal Đặt Lịch
     const bookingModal = document.getElementById('bookingModal');
-    const serviceSelect = document.getElementById('serviceSelect');
+    const selectedPackage = document.getElementById('selectedPackage');
 
-    function openBookingModal() {
+    function openBooking(packageName = '') {
       bookingModal.classList.add('active');
-      // Tự động set ngày hẹn mặc định là hôm nay
+      if (packageName && selectedPackage) {
+        for (let option of selectedPackage.options) {
+          if (option.value.includes(packageName) || packageName.includes(option.value)) {
+            selectedPackage.value = option.value;
+            break;
+          }
+        }
+      }
+      // Gán ngày mặc định là hôm nay
       const today = new Date().toISOString().split('T')[0];
-      const dateInput = document.getElementById('bookDate');
-      if (dateInput && !dateInput.value) {
-        dateInput.value = today;
+      const dateEl = document.getElementById('bookingDate');
+      if (dateEl && !dateEl.value) {
+        dateEl.value = today;
       }
     }
 
-    function closeBookingModal() {
+    function closeBooking() {
       bookingModal.classList.remove('active');
     }
 
     function closeModalOnBackdrop(e) {
       if (e.target === bookingModal) {
-        closeBookingModal();
+        closeBooking();
       }
     }
 
-    function selectCombo(comboName) {
-      if (serviceSelect) {
-        serviceSelect.value = comboName;
-      }
-      openBookingModal();
-    }
-
-    // 4. Form Submission & Chuyển Hướng Gửi Tin Nhắn Zalo
-    function handleBookingSubmit(event) {
+    // Xử lý gửi form trực tiếp qua hotline Zalo
+    function submitBooking(event) {
       event.preventDefault();
-      const name = document.getElementById('custName').value;
-      const phone = document.getElementById('custPhone').value;
-      const date = document.getElementById('bookDate').value;
-      const time = document.getElementById('bookTime').value;
-      const service = document.getElementById('serviceSelect').value;
-      const room = document.getElementById('roomReq').value;
+      const name = document.getElementById('clientName').value;
+      const phone = document.getElementById('clientPhone').value;
+      const date = document.getElementById('bookingDate').value;
+      const time = document.getElementById('bookingTime').value;
+      const pkg = document.getElementById('selectedPackage').value;
 
-      // Nội dung tin nhắn đặt lịch sẵn
-      const message = `Xin chào Mingo Spa, tôi muốn đặt lịch hẹn:\n- Tên: ${name}\n- SĐT: ${phone}\n- Dịch vụ: ${service}\n- Loại phòng: ${room}\n- Thời gian: ${time} ngày ${date}`;
-      
-      // Mở Zalo hotline của Mingo Spa (hoặc gọi điện)
-      const encodedMsg = encodeURIComponent(message);
-      alert('Cảm ơn quý khách ' + name + '! Hệ thống đang chuyển thông tin đặt lịch đến chuyên viên lễ tân Mingo Spa qua Zalo.');
-      
-      // Mở cửa sổ Zalo chat
-      window.open(`https://zalo.me/0583830123?text=${encodedMsg}`, '_blank');
-      closeBookingModal();
+      const message = `Xin chào Mingo Spa! Tôi muốn đặt lịch:\n- Khách hàng: ${name}\n- Số điện thoại: ${phone}\n- Dịch vụ: ${pkg}\n- Thời gian: ${time} ngày ${date}`;
+      const zaloUrl = `https://zalo.me/0583830123?text=${encodeURIComponent(message)}`;
+
+      alert(`Cảm ơn ${name}! Mingo Spa đang kết nối đến chuyên viên tư vấn qua Zalo.`);
+      window.open(zaloUrl, '_blank');
+      closeBooking();
     }
   </script>
 </body>
